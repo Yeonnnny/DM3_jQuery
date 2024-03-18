@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery</title>
+    <script th:src="@{/script/jquery-3.7.1.min.js}"></script>
+    <script>
+
+        // document가 준비되면 function()을 실행함 !
+        // 1>
+        // jQuery('document').ready(function () {
+        //         alert("hello");
+        // });
+        
+        // 2>
+        // $('document').ready(function() { 
+        //     alert("hello");
+        // });
+
+        // 3>
+        $(function() { 
+            alert("hello");
+        });
+
+    </script>
+</head>
+<body>
+    
+    <h2>jQuery </h2>
+    
+</body>
+</html>

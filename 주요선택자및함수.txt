@@ -1,0 +1,53 @@
+*** 선택자(Selector)
+- 필터 선택자(폼)
+:input		-> 입력 폼
+:file   	-> 파일 업로드 폼 
+:hidden		-> 숨겨진 폼
+:radio		-> 라디오 버튼
+:submit		-> 전송 버튼
+:password
+:reset
+:text
+
+- 입력폼의 현재 상태에 따른 선택자
+:checked	-> check가 되어 있는 요소
+:selected	-> select 되어 있는 요소
+:disabled	-> disabled 되어 있는 요소
+:enabled 	-> enabled 되어 있는 요소
+
+- Visibility 선택자
+:hidden 	-> 보이지 않는 요소
+:visible 	-> 보이는 요소
+
+- 내용에 따른 선택자
+:contains()	-> () 안의 텍스트와 일치하는 문자열을 가지고 있는 요소
+:empty		-> 텍스트가 없는 요소. 엔터를 포함하고 있는 경우 empty가 아님
+:has()		-> ()안의 요소를 포함하고 있는 요소를 반환
+:parent		-> 부모 요소
+
+*** Manipulation
+prepend() / append()
+before() / after()
+text() / html()
+attr() / removeAttr()
+remove() / empty()
+addClass() / removeClass()
+
+
+*** 필터링 메소드
+eq()		-> 인덱스 번호에 해당하는 요소를 선택
+filter() 	-> 조건에 맞는 요소를 선택
+not()		-> 특정 조건에 맞지 않는 요소를 선택
+first()		-> 선택된 집합에서 첫 번째 자식요소를 선택
+last()		-> 선택된 집합에서 마지막 자식요소를 선택
+has()		-> 선택한 요소의 자식요소중에 has()에서 주어진 선택자가 있는 확인하여 선택
+
+<Traversing>
+특정요소를 선택한 후 그 요소를 기준으로 새로운 요소를 찾아가는 방법
+
+children()	-> 선택한 요소의 자손 요소를 선택
+parent()	-> 선택한 요소의 부모 요소를 선택
+prev()		-> 선택한 요소의 이전 요소를 선택
+next()		-> 선택한 요소의 이전 요소를 선택
+siblings()	-> 선택한 요소의 형제 요소를 모두 선택
+find()		-> 선택한 요소의 자손 요소들 중 조건에 맞는 요소를 선택
