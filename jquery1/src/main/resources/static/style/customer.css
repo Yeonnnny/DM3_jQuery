@@ -1,0 +1,38 @@
+h2{
+    width: 950px;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#inputForm{
+    width: 980px;
+    height: 60px;
+    margin: 0 auto;
+
+}
+
+#action{
+    width: 1024px;
+    height:40px;
+    margin: 0 auto;
+
+}
+
+
+#memberTable {
+    width: 1024px;
+    margin: 0 auto;
+    border: 1px solid grey;
+    border-collapse: collapse;
+}
+
+th{
+    height: 50px;
+    background-color: pink;
+    border: 1px solid grey;
+}
+td{
+    border: 1px solid grey;
+}

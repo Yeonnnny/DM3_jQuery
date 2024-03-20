@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Exam V02</title>
+
+    <link rel="stylesheet" th:href="@{/style/customer.css}">    
+
+    <script th:src="@{/script/jquery-3.7.1.min.js}"></script>
+    <script>
+        $(function () {
+            // 멤버 선택
+            $("#checkAll").on("click", function () {
+                if ($(this).is(":checked")) {       // is() : 판단 여부 동적으로 확인
+                    $("#memberTable input[type='checkbox']").prop("checked", true);     // prop() : 동적으로 상태 변환
+                }
+                else $("#memberTable input:checkbox").prop("checked", false);
+            })
+
+            // 멤버 삭제
+            $("#deleteMember").on("click", function () {
+                let data = $("#memberTable input:checkbox:checked").parent().parent(); // 부모의 부모 : tr태그
+                console.log(data)
+                data.remove();
+            })
+
+            // 멤버 추가
+            $("#insertMember").on("click", memberAdd);
+
+            function memberAdd() {
+                let name = $("#name").val();
+                let addr = $("#addr").val();
+                let phone = $("#phone").val();
+                let grade = $("#grade option:selected").val();
+                let data = `<tr>
+                                <td><input type="checkbox"></td>
+                                <td>${name}</td>
+                                <td>${addr}</td>
+                                <td>${phone}</td>
+                                <td>${grade}</td>
+                            </tr>`;
+                $("#memberTable").append(data);
+                resetAll();
+            }
+
+            // 등록 상자 초기화
+            function resetAll() {
+                $("#name").val('');
+                $("#addr").val('');
+                $("#phone").val('');
+                $("#grade").val("최우수");
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div id="container"></div>
+
+    <h2 id="title">[ 고객목록 ]</h2>
+    <div >
+        <!-- 고객정보 입력창 -->
+        <form action="" id="inputForm">
+            이름 : <input type="text" id="name">
+            주소 : <input type="text" id="addr">
+            전화번호 : <input type="text" id="phone">
+            고객등급 : 
+            <select name="grade" id="grade">
+                <option value="최우수">최우수</option>
+                <option value="우수">우수</option>
+                <option value="일반">일반</option>
+            </select>
+            <input type="button" id="insertMember" value="추가">
+            <input type="reset" id="resetMember" value="초기화">
+        </form>
+    </div>
+    
+
+    <div id="action">
+        <input type="checkbox" id="checkAll">
+        <input type="button" id="deleteMember" value="삭제"> <!--this 위의를 싿다 날려야-->
+    </div>
+    <table id="memberTable">
+        <tr>
+            <th>선택</th>
+            <th>이름(이메일)</th>
+            <th>주소</th>
+            <th>전화번호</th>
+            <th>고객등급</th>
+        </tr>
+        <tr>
+            <td><input type="checkbox"></td>
+            <td>강감찬(naver.com)</td>
+            <td>서울시 시청앞</td>
+            <td>010-7777-1111</td>
+            <td>최우수</td>
+        </tr>
+
+        
+
+    </table>
+
+
+</body>
+
+</html>

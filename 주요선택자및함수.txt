@@ -23,15 +23,16 @@
 :contains()	-> () 안의 텍스트와 일치하는 문자열을 가지고 있는 요소
 :empty		-> 텍스트가 없는 요소. 엔터를 포함하고 있는 경우 empty가 아님
 :has()		-> ()안의 요소를 포함하고 있는 요소를 반환
-:parent		-> 부모 요소
+:parent()	-> 부모 요소
 
 *** Manipulation
-prepend() / append()
+prepend() / append()    -> append(data) : 해당 element의 가장 마지막 자식의 맨 끝에 data추가
 before() / after()
 text() / html()
 attr() / removeAttr()
 remove() / empty()
 addClass() / removeClass()
+
 
 
 *** 필터링 메소드
@@ -45,9 +46,15 @@ has()		-> 선택한 요소의 자식요소중에 has()에서 주어진 선택자
 <Traversing>
 특정요소를 선택한 후 그 요소를 기준으로 새로운 요소를 찾아가는 방법
 
-children()	-> 선택한 요소의 자손 요소를 선택
-parent()	-> 선택한 요소의 부모 요소를 선택
-prev()		-> 선택한 요소의 이전 요소를 선택
-next()		-> 선택한 요소의 이전 요소를 선택
-siblings()	-> 선택한 요소의 형제 요소를 모두 선택
-find()		-> 선택한 요소의 자손 요소들 중 조건에 맞는 요소를 선택
+children()	        -> 선택한 요소의 자손 요소를 선택
+parent()	        -> 선택한 요소의 부모 요소를 선택
+prev()  / prevAll()	-> 선택한 요소의 이전 요소를 선택
+next()	/ nextAll()	-> 선택한 요소의 이전 요소를 선택
+siblings()	        -> 선택한 요소의 형제 요소를 모두 선택
+find()		        -> 선택한 요소의 자손 요소들 중 조건에 맞는 요소를 선택
+
+
+//반복
+each
+1) $(선택자).each(function(index, item){});
+2) $.each(객체, function(index, item){});

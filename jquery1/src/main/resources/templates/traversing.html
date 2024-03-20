@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>탐색(Traversing) 주요 메소드</title>
+    <script src="script/jquery-3.7.1.min.js"></script>
+    <script>
+        $(function(){
+            $("div").find("b").css({"font-size":"1.5em", "color":"red"});
+            // $("div").children("#item").html("<i>나는 자식이에요~</i>"); // 찾은 태그의 자리에 html넣기(기존 데이터 없어짐)
+            $("div").children("#item").append("<i>나는 자식이에요~</i>");  // 찾은 태그 자리 바로 옆에 넣기
+            $("b").parent().css("background-color","silver");
+            $("p").eq(3).prev().css("background-color","gold"); // 인덱스는 0부터 시작함
+            $("div").prev().find("li").eq(1).nextAll().css("background-color","pink"); // div를 기준으로 3,4번째 li 찾기
+            $("div").prev().children().odd().css("color","blue"); // div를 기준으로 2,4번째 li 찾기
+            //
+            // $("h3").css("color","orange").filter(":even").css("color","red");
+            // end() : 메소드 체이닝을 통해 범위가 좁아진 상태를 이전 상태로 되돌림
+            $("h3").css("color","orange").filter(":even").css("color","blue").end().filter(":odd").css("background-color","yellow");
+            
+
+        })
+    </script>
+</head>
+<body>
+    <h2>탐색(Traversing) 주요 메소드 </h2>
+    <ul>
+        <li> find("선택자")  : 선택한 요소의 자손 요소 중에서 특정 조건에 부합하는 요소를 찾음</li>
+        <li> children("선택자")  : 선택한 요소의 자손 요소를 탐색</li>
+        <li> parent() / parents("선택자"): 선택한 요소의 부모 요소를 탐색</li>
+        <li> next("선택자") : 선택한 요소의 형제 요소 </li>
+    </ul>
+
+    <div>
+        <p>첫 번째 요소 : <b>하나</b></p>
+        <p id="item">둘</p>
+        <p>셋</p>
+        <p>넷</p>
+        <p>다섯</p>
+    </div>
+
+    <hr>
+    <h2>메소드 체이닝</h2>
+    <h3>header-0</h3>
+    <h3>header-1</h3>
+    <h3>header-2</h3>
+    <h3>header-3</h3>
+    <h3>header-4</h3>
+
+</body>
+</html>
