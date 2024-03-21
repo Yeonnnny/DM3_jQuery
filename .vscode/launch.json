@@ -9,6 +9,16 @@
             "projectName": "jquery1",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AjaxtestApplication<ajaxtest>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "net.kdigital.ajaxtest.AjaxtestApplication",
+            "projectName": "ajaxtest",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
